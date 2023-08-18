@@ -32,6 +32,10 @@ func index(w http.ResponseWriter, r *http.Request) {
 
 func GetDnsData(w http.ResponseWriter, r *http.Request) {
 	key := r.Header.Get("token")
+	if key == "" {
+		queryParams := r.URL.Query()
+		key = queryParams.Get("token")
+	}
 	if Core.VerifyToken(key) {
 		fmt.Fprint(w, JsonRespData(RespData{
 			HTTPStatusCode: "200",
