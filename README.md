@@ -2,10 +2,11 @@
 ---
 hdnslog 是一款基于DNSLog-GO二次开发的监控 DNS 解析记录的工具，自带多用户WEB界面
 
+hdnslog 主要用于配合 hscan 漏描使用。
 
 安装
 ---
-# 1.修改配置文件 config.ini
+### 1.修改配置文件 config.ini
 
 ```
 HTTP:
